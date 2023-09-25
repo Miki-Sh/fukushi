@@ -22,8 +22,8 @@ const MainChoice = () => {
   return (
     <div className="my-12">
       {ChoiceList.map((items) => (
-      <Link href={items.href}>
-        <div key={items.name} className='inline-block w-1/4 mr-6 text-center rounded-3xl shadow-xl bg-white cursor-pointer'>
+      <Link href={items.href} key={items.name}>
+        <div className='inline-block w-1/4 mr-6 text-center rounded-3xl shadow-xl bg-white cursor-pointer'>
           <div className='rounded py-8 px-0'>
             <h1>{items.name}</h1>
           </div>
