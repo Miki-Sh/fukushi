@@ -1,8 +1,11 @@
-const header = () => {
+import Link from "next/link";
+
+const Header = () => {
     return(
-        <p>病気やけが、出産、死亡、老齢、障害、失業などで困った時は...<br />
-        社会保障を使おう!</p>
+        <div>
+            <Link href="/"><p>最初のページに戻る</p></Link>
+        </div>
     );
 };
 
-export default header;
+export default Header;
