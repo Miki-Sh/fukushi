@@ -1,13 +1,9 @@
-import Header from 'src//components/Header';
 import Main from 'src/components/Main';
-import Footer from 'src/components/Footer';
 
 const App = () => {
   return (
-    <div className="text-center">
-      <Header />
+    <div className="text-center text-red-950">
       <Main />
-      <Footer />
     </div>
   );
 };
