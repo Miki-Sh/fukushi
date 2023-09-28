@@ -20,13 +20,11 @@ const MainChoice = () => {
   ];
 
   return (
-    <div className="my-12">
+    <div className="my-12 flex flex-wrap justify-center items-center">
       {ChoiceList.map((items) => (
       <Link href={items.href} key={items.name}>
-        <div className='inline-block w-1/4 mr-6 text-center rounded-3xl bg-gradient-to-t from-emerald-100 via-emerald-50 to-teal-100 shadow-2xl cursor-pointer'>
-          <div className='rounded py-8 px-1 text-3xl'>
-            <h1>{items.name}</h1>
-          </div>
+        <div className='inline-block h-60 w-60 mr-8 mb-8 text-center rounded-3xl bg-gradient-to-t from-emerald-100 via-emerald-50 to-teal-100 shadow-2xl cursor-pointer'>
+          <h1 className='pt-12 pb-8 px-2 text-3xl'>{items.name}</h1>
           <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>{items.introduction}</p>
         </div>
       </Link>
