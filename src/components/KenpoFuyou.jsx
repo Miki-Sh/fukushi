@@ -70,11 +70,11 @@ const KenpoFuyou = (props) => {
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50
         flex items-center justify-center z-1"
         onClick={() => setKenpoOpen(false)}>
-      <div className=" h-1/2 w-1/2 text-center text-red-950 bg-amber-50"
+      <div className=" h-[430px] w-96 p-4 text-center text-red-950 bg-amber-50"
           onClick={(e) => e.stopPropagation()}>
-        <h1 className="mt-14 mb-4 mx-4 text-2xl">{list[i].q}</h1>
+        <h1 className="mt-10 mb-4 text-2xl">{list[i].q}</h1>
         {!(i===0||i===1||i===10) && ( 
-          <div className="mx-4">
+          <div>
             <button className=" py-3 px-11 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in"

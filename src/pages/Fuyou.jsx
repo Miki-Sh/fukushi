@@ -10,7 +10,7 @@ const Fuyou = () => {
 
   return (
     <div>
-      <div className="my-12 mx-12 text-xl">
+      <div className="my-12 mx-12 text-xl text-red-950">
         <h1 className="pb-8 text-center text-3xl text-indigo-900">扶養（ふよう）って何？</h1>
 
         <p className="pb-8">　扶養とは、子どもや両親、兄弟など、収入が少ない人を金銭的に支えることを言います。<br />
@@ -20,12 +20,12 @@ const Fuyou = () => {
       </div>
       <div className="my-12 flex flex-wrap justify-center items-center">
           
-        <div className='inline-block w-1/2 mr-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
+        <div className='inline-block lg:w-2/5 mx-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
           <h1 className='pt-12 pb-8 px-2 text-3xl'>税金の扶養</h1>
           <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
             　税金に関する扶養では、金銭面で支えている人を扶養に入れると、支えている人が払う税金（所得税や住民税）が安くなります。<br />
             　例えば、会社員の人が、パートで働く奥さんがいたり、田舎に暮らす両親に仕送りをして支えている場合、年末調整で扶養に入れる手続きをすると、所得税や住民税が安くなります。</p>
-          <p  className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
+          <p  className='pb-10 pl-3 pr-2 text-left text-sky-800 text-lg'>
             　税金の扶養に入れられるかどうかは、国が条件を決めています。条件に当てはまるか診断してみましょう！</p>
           <button
             className="py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
@@ -34,12 +34,29 @@ const Fuyou = () => {
             onClick={() => {setZeiOpen(true)}}
           >税制上の扶養に入れられるか診断！</button>
           { ZeiOpen && <ZeiFuyou 
-            // ZeiOpen={ZeiOpen}
             setZeiOpen={setZeiOpen}
-            // list={ZeiFuyou}
             /> }
         </div>
-        <div className='inline-block w-1/2 mr-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
+        <div className='inline-block lg:w-2/5 mx-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
+          <h1 className='pt-12 pb-8 px-2 text-3xl'>年金の扶養</h1>
+          <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
+            　年金の扶養に入れると、扶養されている人が自分で保険料を払わなくて良くなります。<br />
+            　例えば、厚生年金に加入している人が、パートナー（事実婚を含む）を扶養に入れると、パートナーは保険料を自分で払わなくて良くなります。</p>
+          <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
+            　年金の扶養に入れられるかどうかは、国が条件を決めています。条件に当てはまるか診断してみましょう！</p>
+          <p className='pb-6 pl-3 pr-2 text-left text-red-800 text-lg'>
+            ※厚生年金に加入していない人は、パートナーを扶養に入れることができません。</p>
+          <button
+            className="py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
+              bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
+              transition duration-200 ease-in"
+            onClick={() => {setNenOpen(true)}}
+          >年金の扶養入れられるか診断！</button>
+          { NenOpen && <NenFuyou 
+            setNenOpen={setNenOpen}
+            /> }
+        </div>
+        <div className='inline-block lg:w-2/5 mx-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
           <h1 className='pt-12 pb-8 px-2 text-3xl'>健康保険の扶養</h1>
           <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
             　健康保険の扶養に入れると、扶養されている人が自分で健康保険料を払わなくて良くなります。<br />
@@ -57,25 +74,6 @@ const Fuyou = () => {
           >健康保険の扶養入れられるか診断！</button>
           { KenpoOpen && <KenpoFuyou 
             setKenpoOpen={setKenpoOpen}
-            /> }
-        </div>
-        <div className='inline-block w-1/2 mr-8 mb-8 p-8 text-center rounded-3xl border-4 border-teal-500'>
-          <h1 className='pt-12 pb-8 px-2 text-3xl'>年金の扶養</h1>
-          <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
-            　年金の扶養に入れると、扶養されている人が自分で保険料を払わなくて良くなります。<br />
-            　例えば、厚生年金に加入している人が、パートナー（事実婚を含む）を扶養に入れると、パートナーは保険料を自分で払わなくて良くなります。</p>
-          <p className='pb-6 pl-3 pr-2 text-left text-sky-800 text-lg'>
-            　年金の扶養に入れられるかどうかは、国が条件を決めています。条件に当てはまるか診断してみましょう！</p>
-          <p className='pb-6 pl-3 pr-2 text-left text-red-800 text-lg'>
-            ※厚生年金に加入していない人は、パートナーを扶養に入れることができません。</p>
-          <button
-            className="py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
-              bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
-              transition duration-200 ease-in"
-            onClick={() => {setNenOpen(true)}}
-          >年金の扶養入れられるか診断！</button>
-          { NenOpen && <NenFuyou 
-            setNenOpen={setNenOpen}
             /> }
         </div>
       </div>
