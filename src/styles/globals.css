@@ -28,4 +28,5 @@ body {
   background-color: #fcedd4;
   background-image: url(/Wave.svg);
   background-repeat: repeat;
+  background-attachment: fixed;
   }

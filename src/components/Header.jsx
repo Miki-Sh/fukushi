@@ -3,8 +3,11 @@ import Link from "next/link";
 
 const Header = () => {
   return(
-    <div className='w-max flex items-center pl-12 text-red-950 hover:text-orange-500'>
-      <Link href="/"><Image src='/HOME.svg' alt="HOME" height={30} width={30} />最初のページに戻る</Link>
+    <div className="h-12 w-full flex items-center pl-2 bg-amber-50 border-dashed border-b-8 border-orange-200 text-red-950 ">
+      <Link href="/" className="flex items-center hover:text-orange-500">
+        <Image src="/HOME.svg" alt="HOME" height={30} width={30} className="mr-2 hover:fill-orange-500" />
+        最初のページに戻る
+      </Link>
     </div>
   );
 };

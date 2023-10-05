@@ -27,7 +27,7 @@ const MainChoice = () => {
     <div className="my-12 flex flex-wrap justify-center items-center">
       {ChoiceList.map((items) => (
       <Link href={items.href} key={items.name}>
-        <div className='inline-block h-64 w-64 mr-8 mb-8 text-center rounded-3xl bg-gradient-to-t from-emerald-100 via-emerald-50 to-teal-100 shadow-2xl cursor-pointer'>
+        <div className='inline-block h-72 w-72 mr-8 mb-8 text-center rounded-3xl border-dashed border-8 border-teal-200 bg-gradient-to-t from-emerald-100 via-transparent to-teal-100 shadow-2xl cursor-pointer'>
           <h1 className='pt-12 px-2 text-3xl'>{items.name}</h1>
           <div className="py-2 flex justify-center">
           <Image src={items.img} alt="choice" height={50} width={50} />
