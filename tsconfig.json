@@ -18,6 +18,6 @@
     // },
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/Fuyou.jsx", "src/components/Shindan.jsx", "src/pages/Taisyoku.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/Fuyou.jsx", "src/components/Shindan.jsx", "src/pages/Taisyoku.jsx", "src/components/Header.jsx"],
   "exclude": ["node_modules"]
 }
