@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import TaisyokuRiyu from '/src/components/TaisyokuRiyu';
 import Accordion from '/src/components/Accordion';
+import Modal from '/src/components/Modal';
 
 const Taisyoku = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -99,7 +99,29 @@ const Taisyoku = () => {
           className='mb-6 py-2 px-4 text-center shadow-md rounded-3xl text-lg font-semibold 
             bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
             transition duration-200 ease-in'>自己都合や特定理由って何？</button>
-        { modalOpen && <TaisyokuRiyu setModalOpen={setModalOpen} /> }
+        { modalOpen && <Modal 
+          contents={
+            <div className='text-left'>
+              <h1>　退職する理由によっては、失業給付を早く長くもらえたり、国民健康保険料が軽減されたりします！</h1>
+                <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定受給資格者</h2>
+                  <ul className='ml-5 list-disc'>
+                    <li>会社や事業所が倒産・廃止になった</li>
+                    <li>事業所の移転で、通勤するのが難しくなった</li>
+                    <li>妊娠、育児、介護などを理由に不利益な扱いをされた</li>
+                    <li>契約更新予定だったが、急に契約更新されなくなった</li>
+                    <li>リストラ勧告をされた</li>
+                  </ul>
+                <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定理由離職者</h2>
+                  <ul className='ml-5 list-disc'>
+                    <li>体力の不足や、障がい・病気・けがをした</li>
+                    <li>妊娠、出産、育児のため辞めることになった</li>
+                    <li>家族が亡くなったり、病気やけがなど、家庭の事情が急変した</li>
+                    <li>結婚のため遠くへ引っ越すことになった</li>
+                    <li>自分やパートナーが遠くへ転勤になった</li>
+                  </ul>
+                <p className='pt-4'>　これ以外にも対象になる退職理由があるので、ハローワークで手続きをする際には、退職理由をきちんと伝えて相談してみましょう！</p>                      
+            </div>}
+          setModalOpen={setModalOpen} /> }
         <Accordion 
           List={[{
             title: '自己都合で退職した人',
