@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from '/src/components/Accordion';
-import Modal from '/src/components/Modal';
 
 const Taisyoku = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -95,66 +94,74 @@ const Taisyoku = () => {
           <p className='ml-2 text-left text-red-800 text-lg'>
             会社を辞めた日から1年を過ぎると、まだ給付をもらえる日数が残っていても、過ぎた分はもらえなくなってしまいます！なるべく早めに手続きをしましょう！</p>
         </div>
-        <button onClick={() => setModalOpen(true)}
-          className='mb-6 py-2 px-4 text-center shadow-md rounded-3xl text-lg font-semibold 
-            bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
-            transition duration-200 ease-in'>自己都合や特定理由って何？</button>
-        { modalOpen && <Modal 
-          contents={
-            <div className='text-left'>
-              <h1>　退職する理由によっては、失業給付を早く長くもらえたり、国民健康保険料が軽減されたりします！</h1>
-                <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定受給資格者</h2>
-                  <ul className='ml-5 list-disc'>
-                    <li>会社や事業所が倒産・廃止になった</li>
-                    <li>事業所の移転で、通勤するのが難しくなった</li>
-                    <li>妊娠、育児、介護などを理由に不利益な扱いをされた</li>
-                    <li>契約更新予定だったが、急に契約更新されなくなった</li>
-                    <li>リストラ勧告をされた</li>
-                  </ul>
-                <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定理由離職者</h2>
-                  <ul className='ml-5 list-disc'>
-                    <li>体力の不足や、障がい・病気・けがをした</li>
-                    <li>妊娠、出産、育児のため辞めることになった</li>
-                    <li>家族が亡くなったり、病気やけがなど、家庭の事情が急変した</li>
-                    <li>結婚のため遠くへ引っ越すことになった</li>
-                    <li>自分やパートナーが遠くへ転勤になった</li>
-                  </ul>
-                <p className='pt-4'>　これ以外にも対象になる退職理由があるので、ハローワークで手続きをする際には、退職理由をきちんと伝えて相談してみましょう！</p>                      
-            </div>}
-          setModalOpen={setModalOpen} /> }
+        <Accordion 
+          List={[{
+            title: '自己都合や特定理由って何？',
+            text:
+              <div className='text-left'>
+                <h1>　退職する理由によっては、失業給付を早く長くもらえたり、国民健康保険料が軽減されたりします！</h1>
+                  <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定受給資格者</h2>
+                    <ul className='ml-5 list-disc'>
+                      <li>会社や事業所が倒産・廃止になった</li>
+                      <li>事業所の移転で、通勤するのが難しくなった</li>
+                      <li>妊娠、育児、介護などを理由に不利益な扱いをされた</li>
+                      <li>契約更新予定だったが、急に契約更新されなくなった</li>
+                      <li>リストラ勧告をされた</li>
+                    </ul>
+                  <h2 className='pt-4 pb-2 text-xl text-indigo-900'>特定理由離職者</h2>
+                    <ul className='ml-5 list-disc'>
+                      <li>体力の不足や、障がい・病気・けがをした</li>
+                      <li>妊娠、出産、育児のため辞めることになった</li>
+                      <li>家族が亡くなったり、病気やけがなど、家庭の事情が急変した</li>
+                      <li>結婚のため遠くへ引っ越すことになった</li>
+                      <li>自分やパートナーが遠くへ転勤になった</li>
+                    </ul>
+                  <p className='pt-4'>　これ以外にも対象になる退職理由があるので、ハローワークで手続きをする際には、退職理由をきちんと伝えて相談してみましょう！</p>                      
+              </div>,
+            bg: 'bg-red-50 mb-6'
+          }]} />
         <Accordion 
           List={[{
             title: '自己都合で退職した人',
             text: 
               <div className='px-6 pb-6 text-red-950'>
                 <h1 className='text-indigo-900'>失業給付をもらえる条件</h1>
-                <ul className='pl-6 list-disc'>
-                  <li>退職前2年間の間に、合計12ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
-                  <li>今すぐ働ける状況</li>
-                </ul>
+                  <ul className='pl-6 list-disc'>
+                    <li>退職前2年間の間に、合計12ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
+                    <li>今すぐ働ける状況</li>
+                  </ul>
+                <h1 className='pt-2 text-indigo-900'>もらえる金額</h1>
+                  <div className='grid sm:flex items-center justify-items-center'>
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>1日あたりの給付額</button> × 
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>もらえる日数</button> × 
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>45〜80％</button>
+                  </div>
+                  <p>「失業給付　計算サイト」でネット検索すると目安の金額がわかります</p>
                 <h1 className='pt-2 text-indigo-900'>失業給付をもらえる日数</h1>
-                <table className='table-auto p-4 bg-white rounded-lg shadow'>
-                  <thead>
-                    <tr>
-                      <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>　雇用保険　<br />　加入期間　</th>
-                      <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>もらえる日数</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className='text-gray-700'>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年未満</td>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>90日</td>
-                    </tr>
-                    <tr className='text-gray-700'>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年以上</td>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>120日</td>
-                    </tr>
-                    <tr className='text-gray-700'>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>20年以上</td>
-                      <td className='border-b-2 p-4 dark:border-dark-5 text-center'>150日</td>
-                    </tr>
-                  </tbody>
-                </table>
+                  <table className='table-auto p-4 bg-white rounded-lg shadow'>
+                    <thead>
+                      <tr>
+                        <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>　雇用保険　<br />　加入期間　</th>
+                        <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>もらえる日数</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className='text-gray-700'>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年未満</td>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>90日</td>
+                      </tr>
+                      <tr className='text-gray-700'>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年以上</td>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>120日</td>
+                      </tr>
+                      <tr className='text-gray-700'>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>20年以上</td>
+                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>150日</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <h1 className='pt-2 text-indigo-900'>待機期間</h1>
+                  <p>　ハローワークで申請をしてから7日間と2ヶ月（過去5年間に2回退職した人や、懲戒解雇の人は3ヶ月）は給付対象外です。それ以降から約1ヶ月ごとに給付されます。</p>
               </div>,
             bg: 'bg-cyan-50'
           },
@@ -163,18 +170,35 @@ const Taisyoku = () => {
             text: 
               <div className='px-6 pb-6 text-red-950'>
                 <h1 className='text-indigo-900'>失業給付をもらえる条件</h1>
-                <ul className='pl-6 list-disc'>
-                  <li>退職前1年間の間に、合計6ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
-                  <li>今すぐ働ける状況</li>
-                </ul>
+                  <ul className='pl-6 list-disc'>
+                    <li>退職前1年間の間に、合計6ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
+                    <li>今すぐ働ける状況</li>
+                  </ul>
+                <h1 className='pt-2 text-indigo-900'>もらえる金額</h1>
+                  <div className='grid sm:flex items-center justify-items-center'>
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>1日あたりの給付額</button> × 
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>もらえる日数</button> × 
+                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>45〜80％</button>
+                  </div>
+                  <p>「失業給付　計算サイト」でネット検索すると目安の金額がわかります</p>
                 <h1 className='pt-2 text-indigo-900'>失業給付をもらえる日数</h1>
-                <p>　90日〜360日</p>
+                  <p>　90日〜360日</p>
+                <h1 className='pt-2 text-indigo-900'>待機期間</h1>
+                  <p>　ハローワークで申請をしてから7日間は給付対象外です。8日目以降から約1ヶ月ごとに給付されます。</p>
               </div>,
             bg: 'bg-green-50'
           },
           {
             title: '病気やけが、出産・育児・介護などですぐに働けない人',
-            text: 'テキスト',
+            text: 
+            <div className='px-6 pb-6 text-red-950'>
+              <p>
+                　病気やけが、妊娠・出産や不妊治療、育児、介護などの理由ですぐに働けない場合は、「受給期間延長」の手続きをしましょう！
+                失業手当は1年でもらえる期限が切れてしまいますが、この手続きをすることで、最長で退職日から4年後まで期限を先延ばしにすることができます！
+              </p>
+              <p>　退職してから丸30日経ってから、ハローワークで手続きしましょう！</p>
+              
+            </div>,
             bg: 'bg-lime-50'
           }]} />
       </div>
