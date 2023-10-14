@@ -2,19 +2,17 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Accordion from '/src/components/Accordion';
+import Frame from '/src/components/Frame';
 
 const Taisyoku = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <>
     <div className='my-12 mx-12 text-red-950 text-xl'>
       <h1 className='pb-8 text-center text-indigo-900 text-3xl'>会社を辞める時は何をすればいいの？</h1>
       <p>　会社を辞める時には、いろいろな手続きがあります。きちんと手続きをすることで、支払う金額が減ったり、お金がもらえたりするので、しっかり知っておきましょう！</p>
     </div>
-    
     <div className='my-12 flex flex-wrap justify-center items-center'>
-      <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+      <Frame contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>健康保険</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           会社を辞めた後すぐに就職しない場合は、どの健康保険に入るか選びましょう！</p>
@@ -42,7 +40,7 @@ const Taisyoku = () => {
               <div><p>　会社員の家族がいて、条件に当てはまる場合、家族の扶養に入ることであなたの保険料は支払わなくてよくなります。</p>
                 <Link href='/Fuyou'><button className='mt-6 py-2 px-4 text-center shadow-md rounded-3xl text-lg font-semibold 
                 bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
-                 transition duration-200 ease-in'>扶養について、くわしくはここをクリック！</button></Link>
+                  transition duration-200 ease-in'>扶養について、くわしくはここをクリック！</button></Link>
               </div>,
             bg: 'bg-lime-50'
           }]} />
@@ -51,11 +49,9 @@ const Taisyoku = () => {
           <p className='ml-2 text-left text-red-800 text-lg'>
             3つのうちどれかに入らないと、医療費を一旦全額自己負担しないといけなくなるので注意！</p>
         </div>
-      </div>
-    </div>
+        </> } />
 
-    <div className='my-12 flex flex-wrap justify-center items-center'>
-      <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+      <Frame contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>年金</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           　60歳未満の人で会社を辞めた後すぐに就職しない場合は国民年金、または、夫か妻の扶養に入りましょう！</p>
@@ -71,19 +67,17 @@ const Taisyoku = () => {
           {
             title: '夫か妻の扶養に入る',
             text: 
-              <div className='px-6 pb-6 text-red-950'>
+              <>
                 <p>　厚生年金や共済組合に加入している夫か妻がいて、条件に当てはまる場合、扶養に入ることであなたの保険料は支払わなくてよくなります。</p>
                 <Link href='/Fuyou'><button className='mt-6 py-2 px-4 text-center shadow-md rounded-3xl text-lg font-semibold 
                   bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
                     transition duration-200 ease-in'>扶養について、くわしくはここをクリック！</button></Link>
-              </div>,
+              </>,
             bg: 'bg-green-50'
           }]} />
-      </div>
-    </div>
+      </> } />  
 
-    <div className='my-12 flex flex-wrap justify-center items-center'>
-      <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+      <Frame contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>雇用保険</h1>
         <p className='text-left text-red-950 text-lg'>
         　会社で雇用保険に加入していて、条件に当てはまる人は、失業給付を受け取ることができます！<br />
@@ -124,7 +118,7 @@ const Taisyoku = () => {
           List={[{
             title: '自己都合で退職した人',
             text: 
-              <div className='px-6 pb-6 text-red-950'>
+              <>
                 <h1 className='text-indigo-900'>失業給付をもらえる条件</h1>
                   <ul className='pl-6 list-disc'>
                     <li>退職前2年間の間に、合計12ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
@@ -162,13 +156,13 @@ const Taisyoku = () => {
                   </table>
                 <h1 className='pt-2 text-indigo-900'>待機期間</h1>
                   <p>　ハローワークで申請をしてから7日間と2ヶ月（過去5年間に2回退職した人や、懲戒解雇の人は3ヶ月）は給付対象外です。それ以降から約1ヶ月ごとに給付されます。</p>
-              </div>,
+              </>,
             bg: 'bg-cyan-50'
           },
           {
             title: '会社の倒産・解雇や特定理由で退職した人',
             text: 
-              <div className='px-6 pb-6 text-red-950'>
+              <>
                 <h1 className='text-indigo-900'>失業給付をもらえる条件</h1>
                   <ul className='pl-6 list-disc'>
                     <li>退職前1年間の間に、合計6ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
@@ -185,59 +179,53 @@ const Taisyoku = () => {
                   <p>　90日〜360日</p>
                 <h1 className='pt-2 text-indigo-900'>待機期間</h1>
                   <p>　ハローワークで申請をしてから7日間は給付対象外です。8日目以降から約1ヶ月ごとに給付されます。</p>
-              </div>,
+              </>,
             bg: 'bg-green-50'
           },
           {
             title: '病気やけが、出産・育児・介護などですぐに働けない人',
             text: 
-            <div className='px-6 pb-6 text-red-950'>
+            <>
               <p>
                 　病気やけが、妊娠・出産や不妊治療、育児、介護などの理由ですぐに働けない場合は、「受給期間延長」の手続きをしましょう！
                 失業手当は1年でもらえる期限が切れてしまいますが、この手続きをすることで、最長で退職日から4年後まで期限を先延ばしにすることができます！
               </p>
               <p>　退職してから丸30日経ってから、ハローワークで手続きしましょう！</p>
               
-            </div>,
+            </>,
             bg: 'bg-lime-50'
           }]} />
-      </div>
-    </div>
+      </>} />  
 
-    <div className='my-12 flex flex-wrap justify-center items-center'>
-      <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
-        <h1 className='py-8 text-indigo-900 text-3xl'>住民税</h1>
-        <p className='pb-6 text-left text-red-950 text-lg'>
-          　住民税は昨年の1〜12月分の税金を今年の6月〜来年の5月に後払いする仕組みになっています。退職する月などによって支払い方法が変わるので、注意しましょう！</p>
-        <Accordion 
+      <Frame contents={ <>
+        <h1 className='py-8 text-indigo-900 text-3xl'>住民税</h1><p className='pb-6 text-left text-red-950 text-lg'>
+          住民税は昨年の1〜12月分の税金を今年の6月〜来年の5月に後払いする仕組みになっています。退職する月などによって支払い方法が変わるので、注意しましょう！</p>
+        <Accordion
           List={[{
             title: '退職後1ヶ月以内に別の会社に就職する人',
-            text: 
-              <p>　退職する会社から「異動届出書」という書類をもらうので、それを転職先の会社に提出すればOKです！<br />
-              　住民税は転職先のお給料から、今までと同じように天引きされます。</p>,
+            text: <p>　退職する会社から「異動届出書」という書類をもらうので、それを転職先の会社に提出すればOKです！<br />
+              住民税は転職先のお給料から、今までと同じように天引きされます。</p>,
             bg: 'bg-cyan-50'
           },
           {
             title: '1〜5月に退職する人',
-            text:
-              <p>　5月までの残りの住民税は、最後のお給料か退職金から天引きされます。<br />
-              　6月以降も会社に就職していない場合は、自治体から支払い用紙が届くので、それを使って支払いましょう！</p>,
+            text: <p>　5月までの残りの住民税は、最後のお給料か退職金から天引きされます。<br />
+              6月以降も会社に就職していない場合は、自治体から支払い用紙が届くので、それを使って支払いましょう！</p>,
             bg: 'bg-green-50'
           },
           {
             title: '6〜12月に退職する人',
-            text:
-              <p>　自治体から支払い用紙が届くので、それを使って支払いましょう！<br />
-              　※会社によっては、来年の5月分までの住民税を最後のお給料や退職金から天引きできることもあるので、会社の担当者の人に相談してみても良いかもしれません。</p>,
+            text: <p>　自治体から支払い用紙が届くので、それを使って支払いましょう！<br />
+              ※会社によっては、来年の5月分までの住民税を最後のお給料や退職金から天引きできることもあるので、会社の担当者の人に相談してみても良いかもしれません。</p>,
             bg: 'bg-lime-50'
           }]} />
         <div className='flex items-center mt-4'>
           <Image src='/!.svg' alt='!' height={20} width={20} />
           <p className='ml-2 text-left text-red-800 text-lg'>
-            　昨年よりも収入が大きく減って住民税の支払いが難しい人は、自治体によっては減免制度がある場合があります。
+            昨年よりも収入が大きく減って住民税の支払いが難しい人は、自治体によっては減免制度がある場合があります。
             住んでいる自治体によって条件などが異なるので「○○市　住民税　減免」などインターネットで検索してみましょう！</p>
         </div>
-      </div>
+      </> } />
     </div>
     </>
   );

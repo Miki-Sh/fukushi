@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ZeiFuyou from 'src/components/Fuyou/ZeiFuyou';
 import KenpoFuyou from 'src/components/Fuyou/KenpoFuyou';
 import NenFuyou from 'src/components/Fuyou/NenFuyou';
+import Frame from '/src/components/Frame';
 
 const Fuyou = () => {
   const [ ZeiOpen, setZeiOpen ] = useState(false);
@@ -20,7 +21,7 @@ const Fuyou = () => {
         <p>　扶養には、「税金の扶養（所得税や住民税など）」と「健康保険の扶養」「年金の扶養」の3種類があります。</p>
       </div>
       <div className='my-12 flex flex-wrap justify-center items-center'>
-        <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+        <Frame contents={ <>
           <h1 className='py-8 text-red-950 text-3xl'>税金の扶養</h1>
           <p className='pb-6 text-left text-sky-800 text-lg'>
             　税金に関する扶養では、金銭面で支えている人を扶養に入れると、支えている人が払う税金（所得税や住民税）が安くなります。<br />
@@ -28,15 +29,15 @@ const Fuyou = () => {
           <p  className='text-left text-sky-800 text-lg'>
             　税金の扶養に入れられるかどうかは、国が条件を決めています。条件に当てはまるか診断してみましょう！</p>
           <button
-            className='mt-6 py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
+            className='mt-6 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
               bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
               transition duration-200 ease-in'
             onClick={() => {setZeiOpen(true)}}
-          >税制上の扶養に入れられるか診断！</button>
+          >税金の扶養に入れられるか診断！</button>
           { ZeiOpen && <ZeiFuyou setZeiOpen={setZeiOpen} /> }
-        </div>
+        </> } />
 
-        <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+        <Frame contents={ <>
           <h1 className='py-8 text-red-950 text-3xl'>年金の扶養</h1>
           <p className='pb-6 text-left text-sky-800 text-lg'>
             　年金の扶養に入れると、扶養されている人が自分で保険料を払わなくて良くなります。<br />
@@ -49,15 +50,15 @@ const Fuyou = () => {
               厚生年金に加入していない人は、パートナーを扶養に入れることができません。</p>
           </div>
           <button
-            className='mt-6 py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
+            className='mt-6 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
               bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
               transition duration-200 ease-in'
             onClick={() => {setNenOpen(true)}}
-          >年金の扶養入れられるか診断！</button>
+          >年金の扶養に入れられるか診断！</button>
           { NenOpen && <NenFuyou setNenOpen={setNenOpen} /> }
-        </div>
+        </> } />
 
-        <div className='inline-block lg:w-2/5 m-8 p-8 text-center rounded-3xl border-dashed border-8 border-emerald-200'>
+        <Frame contents={ <>
           <h1 className='py-8 text-red-950 text-3xl'>健康保険の扶養</h1>
           <p className='pb-6 text-left text-sky-800 text-lg'>
             　健康保険の扶養に入れると、扶養されている人が自分で健康保険料を払わなくて良くなります。<br />
@@ -71,13 +72,13 @@ const Fuyou = () => {
               自営業の人などが加入している国民健康保険には、そもそも扶養が無いので家族を扶養に入れることができません。</p>
           </div>
           <button
-            className='mt-6 py-3 px-6 text-center shadow-md rounded-full text-xl font-semibold 
+            className='mt-6 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
               bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
               transition duration-200 ease-in'
             onClick={() => {setKenpoOpen(true)}}
-          >健康保険の扶養入れられるか診断！</button>
+          >健康保険の扶養に入れられるか診断！</button>
           { KenpoOpen && <KenpoFuyou setKenpoOpen={setKenpoOpen} /> }
-        </div>
+        </> } />
       </div>
     </>
   );
