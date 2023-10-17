@@ -11,7 +11,7 @@ const Taisyoku = () => {
       <h1 className='pb-8 text-center text-indigo-900 text-3xl'>会社を辞める時は何をすればいいの？</h1>
       <p>　会社を辞める時には、いろいろな手続きがあります。きちんと手続きをすることで、支払う金額が減ったり、お金がもらえたりするので、しっかり知っておきましょう！</p>
     </div>
-    <div className='my-12 flex flex-wrap justify-center items-center'>
+    <div className='my-12 flex flex-wrap items-center justify-center'>
       <Frame contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>健康保険</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
@@ -81,8 +81,13 @@ const Taisyoku = () => {
         <h1 className='py-8 text-indigo-900 text-3xl'>雇用保険</h1>
         <p className='text-left text-red-950 text-lg'>
         　会社で雇用保険に加入していて、条件に当てはまる人は、失業給付を受け取ることができます！<br />
-        　金額は、毎月のお給料の50〜80％で、もらっていたお給料が少ない人ほどたくさんもらえます。<br />
-        　自分がもらえる金額や日数は、住んでいる場所のハローワークに確認しましょう。</p>
+        もらえる金額は
+        <div className=' sm:flex items-center sm:justify-items-center'>
+          <button className='my-1 py-2 px-4 text-center rounded-xl bg-lime-200'>1日あたりの給付額</button> × 
+          <button className='my-1 py-2 px-4 text-center rounded-xl bg-lime-200'>もらえる日数</button> × 
+          <button className='my-1 py-2 px-4 text-center rounded-xl bg-lime-200'>45〜80％</button>
+        </div>
+        　もらっていたお給料が少ない人ほどたくさんもらえます。<br />「失業給付　計算サイト」でネット検索すると目安の金額がわかります！</p>
         <div className='flex items-center my-6'>
           <Image src='/!.svg' alt='!' height={20} width={20} />
           <p className='ml-2 text-left text-red-800 text-lg'>
@@ -124,13 +129,6 @@ const Taisyoku = () => {
                     <li>退職前2年間の間に、合計12ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
                     <li>今すぐ働ける状況</li>
                   </ul>
-                <h1 className='pt-2 text-indigo-900'>もらえる金額</h1>
-                  <div className='grid sm:flex items-center justify-items-center'>
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>1日あたりの給付額</button> × 
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>もらえる日数</button> × 
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>45〜80％</button>
-                  </div>
-                  <p>「失業給付　計算サイト」でネット検索すると目安の金額がわかります</p>
                 <h1 className='pt-2 text-indigo-900'>失業給付をもらえる日数</h1>
                   <table className='table-auto p-4 bg-white rounded-lg shadow'>
                     <thead>
@@ -168,13 +166,6 @@ const Taisyoku = () => {
                     <li>退職前1年間の間に、合計6ヶ月以上（連続じゃなくてもOK）雇用保険に加入していた</li>
                     <li>今すぐ働ける状況</li>
                   </ul>
-                <h1 className='pt-2 text-indigo-900'>もらえる金額</h1>
-                  <div className='grid sm:flex items-center justify-items-center'>
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>1日あたりの給付額</button> × 
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>もらえる日数</button> × 
-                    <button className='py-2 px-4 text-center rounded-xl bg-lime-200'>45〜80％</button>
-                  </div>
-                  <p>「失業給付　計算サイト」でネット検索すると目安の金額がわかります</p>
                 <h1 className='pt-2 text-indigo-900'>失業給付をもらえる日数</h1>
                   <p>　90日〜360日</p>
                 <h1 className='pt-2 text-indigo-900'>待機期間</h1>
