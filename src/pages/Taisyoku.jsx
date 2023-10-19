@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Accordion from '/src/components/Accordion';
 import Frame from '/src/components/Frame';
+import Accordion from '/src/components/Accordion';
 
 const Taisyoku = () => {
   return (
@@ -12,7 +11,7 @@ const Taisyoku = () => {
       <p>　会社を辞める時には、いろいろな手続きがあります。きちんと手続きをすることで、支払う金額が減ったり、お金がもらえたりするので、しっかり知っておきましょう！</p>
     </div>
     <div className='my-12 flex flex-wrap items-center justify-center'>
-      <Frame contents={ <>
+      <Frame color='emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>健康保険</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           会社を辞めた後すぐに就職しない場合は、どの健康保険に入るか選びましょう！</p>
@@ -51,7 +50,7 @@ const Taisyoku = () => {
         </div>
         </> } />
 
-      <Frame contents={ <>
+      <Frame color='emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>年金</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           　60歳未満の人で会社を辞めた後すぐに就職しない場合は国民年金、または、夫か妻の扶養に入りましょう！</p>
@@ -77,7 +76,7 @@ const Taisyoku = () => {
           }]} />
       </> } />  
 
-      <Frame contents={ <>
+      <Frame color='emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>雇用保険</h1>
         <p className='text-left text-red-950 text-lg'>
         　会社で雇用保険に加入していて、条件に当てはまる人は、失業給付を受け取ることができます！<br />
@@ -130,25 +129,25 @@ const Taisyoku = () => {
                     <li>今すぐ働ける状況</li>
                   </ul>
                 <h1 className='pt-2 text-indigo-900'>失業給付をもらえる日数</h1>
-                  <table className='table-auto p-4 bg-white rounded-lg shadow'>
-                    <thead>
+                  <table className='mx-auto p-4 bg-white rounded-lg shadow'>
+                    <thead className='bg-slate-50 font-normal text-indigo-900'>
                       <tr>
-                        <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>　雇用保険　<br />　加入期間　</th>
-                        <th className='border-b-2 p-4 dark:border-dark-5 whitespace-nowrap font-normal text-gray-900'>もらえる日数</th>
+                        <th className='border-b-2 p-3 whitespace-nowrap'>　雇用保険　<br />　加入期間　</th>
+                        <th className='border-b-2 p-3 whitespace-nowrap'>もらえる日数</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr className='text-gray-700'>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年未満</td>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>90日</td>
+                    <tbody className='text-center text-red-950'>
+                      <tr>
+                        <td className='border-b-2 py-3'>10年未満</td>
+                        <td className='border-b-2 py-3'>90日</td>
                       </tr>
-                      <tr className='text-gray-700'>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>10年以上</td>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>120日</td>
+                      <tr>
+                        <td className='border-b-2 py-3'>10年以上</td>
+                        <td className='border-b-2 py-3'>120日</td>
                       </tr>
-                      <tr className='text-gray-700'>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>20年以上</td>
-                        <td className='border-b-2 p-4 dark:border-dark-5 text-center'>150日</td>
+                      <tr>
+                        <td className='border-b-2 py-3'>20年以上</td>
+                        <td className='border-b-2 py-3'>150日</td>
                       </tr>
                     </tbody>
                   </table>
@@ -182,13 +181,12 @@ const Taisyoku = () => {
                 失業手当は1年でもらえる期限が切れてしまいますが、この手続きをすることで、最長で退職日から4年後まで期限を先延ばしにすることができます！
               </p>
               <p>　退職してから丸30日経ってから、ハローワークで手続きしましょう！</p>
-              
             </>,
             bg: 'bg-lime-50'
           }]} />
       </>} />  
 
-      <Frame contents={ <>
+      <Frame color='emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>住民税</h1><p className='pb-6 text-left text-red-950 text-lg'>
           住民税は昨年の1〜12月分の税金を今年の6月〜来年の5月に後払いする仕組みになっています。退職する月などによって支払い方法が変わるので、注意しましょう！</p>
         <Accordion
