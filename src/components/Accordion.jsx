@@ -4,7 +4,7 @@ const Accordion = (props) => {
     <div className='mx-auto max-w-lg text-left'>
       <div className='space-y-6'>
         { List.map((item) => (
-          <details className={` group rounded-xl shadow-lg ${item.bg}`} key={item.title}>
+          <details className={`group rounded-xl shadow-lg ${item.bg}`} key={item.title}>
             <summary className='flex cursor-pointer list-none items-center justify-between p-6 text-xl font-medium text-sky-900'>
               {item.title}
               <div className='text-red-950'>
