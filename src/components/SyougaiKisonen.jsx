@@ -3,7 +3,7 @@ import Modal from 'src/components/Modal';
 
 const SyougaiKisonen = (props) => {
   const setKisoOpen = props.setKisoOpen;
-  const [ i, setI ] = useState(2);
+  const [ i, setI ] = useState(3);
   const list = [
     {
       'q': '受給要件に当てはまります！',
