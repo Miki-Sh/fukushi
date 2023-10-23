@@ -2,7 +2,7 @@ const Accordion = (props) => {
   const { bg, title, text } = props;
   return (
     <div className='mx-auto mb-6 max-w-lg text-left'>
-      <details className={`group rounded-xl shadow-lg bg-${bg}`}>
+      <details className={`group rounded-xl shadow-lg ${bg}`}>
         <summary className='flex cursor-pointer list-none items-center justify-between p-6 text-xl font-medium text-sky-900'>
           { title }
           <div className='text-red-950'>

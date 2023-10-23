@@ -11,7 +11,7 @@ const Taisyoku = () => {
       <p>　会社を辞める時には、いろいろな手続きがあります。きちんと手続きをすることで、支払う金額が減ったり、お金がもらえたりするので、しっかり知っておきましょう！</p>
     </div>
     <div className='my-12 flex flex-wrap items-center justify-center'>
-      <Frame color='emerald-200' contents={ <>
+      <Frame color='border-emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>健康保険</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           会社を辞めた後すぐに就職しない場合は、どの健康保険に入るか選びましょう！</p>
@@ -23,7 +23,7 @@ const Taisyoku = () => {
             　しかし、家族を扶養している場合、全員分の国民健康保険料を払うよりもトータルで安くなることがあります。計算してお得な方に加入しましょう！<br />
             　任意継続にする場合、退職日の翌日から20日以内に、加入していた健康保険組合に申し込みしましょう。</p>
           }
-          bg='cyan-50'
+          bg='bg-cyan-50'
         />
         <Accordion
           title='国民健康保険に入る'
@@ -32,7 +32,7 @@ const Taisyoku = () => {
             　保険料は所得などから決まります。所得が少ない人や会社の倒産や解雇により退職した人などは保険料が安くなることもあります。自分の保険料がいくらになるかは市区町村の役所の窓口で聞いてみましょう。<br />
             　国民健康保険に入る場合は、退職後14日以内に住んでいる市区町村の役所で手続きをしましょう</p>
           }
-          bg='green-50'
+          bg='bg-green-50'
         />
         <Accordion
           title='家族の扶養に入る'
@@ -43,7 +43,7 @@ const Taisyoku = () => {
                 transition duration-200 ease-in'>扶養について、くわしくはここをクリック！</button></Link>
             </div>
           }
-          bg='lime-50'
+          bg='bg-lime-50'
         />
         <div className='flex items-center mt-4'>
           <Image src='/!.svg' alt='!' height={20} width={20} />
@@ -52,7 +52,7 @@ const Taisyoku = () => {
         </div>
       </> } />
 
-      <Frame color='emerald-200' contents={ <>
+      <Frame color='border-emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>年金</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           　60歳未満の人で会社を辞めた後すぐに就職しない場合は国民年金、または、夫か妻の扶養に入りましょう！</p>
@@ -64,7 +64,7 @@ const Taisyoku = () => {
             　産前産後の期間や、障害年金や生活保護を受け取っている人は、保険料が免除になります！また、所得が少ない、ひとり親、失業や災害などで年金を支払うのが難しい人は、
             保険料が安くなる制度もあります。住んでいる市区町村の役所の国民年金窓口で相談・手続きしましょう。</p>
           }
-          bg='cyan-50'
+          bg='bg-cyan-50'
         />
         <Accordion
           title='夫か妻の扶養に入る'
@@ -76,11 +76,11 @@ const Taisyoku = () => {
               transition duration-200 ease-in'>扶養について、くわしくはここをクリック！</button></Link>
           </>
           }
-          bg='green-50'
+          bg='bg-green-50'
         />
       </> } />  
 
-      <Frame color='emerald-200' contents={ <>
+      <Frame color='border-emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>雇用保険</h1>
         <p className='text-left text-red-950 text-lg'>
         　会社で雇用保険に加入していて、条件に当てはまる人は、失業給付を受け取ることができます！<br />
@@ -120,7 +120,7 @@ const Taisyoku = () => {
                 <p className='pt-4'>　これ以外にも対象になる退職理由があるので、ハローワークで手続きをする際には、退職理由をきちんと伝えて相談してみましょう！</p>                      
             </div>
           }  
-          bg='red-50'
+          bg='bg-red-50'
         />
         <Accordion 
           title='自己都合で退職した人'
@@ -158,7 +158,7 @@ const Taisyoku = () => {
               <p>　ハローワークで申請をしてから7日間と2ヶ月（過去5年間に2回退職した人や、懲戒解雇の人は3ヶ月）は給付対象外です。それ以降から約1ヶ月ごとに給付されます。</p>
           </>
           }
-          bg='cyan-50'
+          bg='bg-cyan-50'
           />
             <Accordion
             title='会社の倒産・解雇や特定理由で退職した人'
@@ -175,7 +175,7 @@ const Taisyoku = () => {
                 <p>　ハローワークで申請をしてから7日間は給付対象外です。8日目以降から約1ヶ月ごとに給付されます。</p>
             </>
             }
-            bg='green-50'
+            bg='bg-green-50'
         />
         <Accordion
           title='病気やけが、出産・育児・介護などですぐに働けない人'
@@ -188,11 +188,11 @@ const Taisyoku = () => {
             <p>　退職してから丸30日経ってから、ハローワークで手続きしましょう！</p>
           </>
           }
-          bg='lime-50'
+          bg='bg-lime-50'
         />
       </>} />  
 
-      <Frame color='emerald-200' contents={ <>
+      <Frame color='border-emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>住民税</h1><p className='pb-6 text-left text-red-950 text-lg'>
           住民税は昨年の1〜12月分の税金を今年の6月〜来年の5月に後払いする仕組みになっています。退職する月などによって支払い方法が変わるので、注意しましょう！</p>
         <Accordion
@@ -201,7 +201,7 @@ const Taisyoku = () => {
             <p>　退職する会社から「異動届出書」という書類をもらうので、それを転職先の会社に提出すればOKです！<br />
             住民税は転職先のお給料から、今までと同じように天引きされます。</p>
           }
-          bg='cyan-50'
+          bg='bg-cyan-50'
         />
         <Accordion
           title='1〜5月に退職する人'
@@ -209,14 +209,14 @@ const Taisyoku = () => {
             <p>　5月までの残りの住民税は、最後のお給料か退職金から天引きされます。<br />
             6月以降も会社に就職していない場合は、自治体から支払い用紙が届くので、それを使って支払いましょう！</p>
           }
-          bg='green-50'
+          bg='bg-green-50'
         />
         <Accordion
           title='6〜12月に退職する人'
           text={ <p>　自治体から支払い用紙が届くので、それを使って支払いましょう！<br />
             ※会社によっては、来年の5月分までの住民税を最後のお給料や退職金から天引きできることもあるので、会社の担当者の人に相談してみても良いかもしれません。</p>
           }
-          bg='lime-50'
+          bg='bg-lime-50'
         />
         <div className='flex items-center mt-4'>
           <Image src='/!.svg' alt='!' height={20} width={20} />

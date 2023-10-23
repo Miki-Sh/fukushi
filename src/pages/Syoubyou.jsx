@@ -24,7 +24,7 @@ const Syoubyou = () => {
       </div>
     </div>
     <div className='my-12 flex flex-wrap items-center justify-center'>
-      <Frame color='lime-200' contents={ <>
+      <Frame color='border-lime-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>高額療養費制度</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           　高額療養費とは、同じ月にかかった医療費が高額になった場合、限度額を超えた分があとで払い戻される制度です。<br />
@@ -117,7 +117,7 @@ const Syoubyou = () => {
           </table>
       </> } />
 
-      <Frame color='emerald-200' contents={ <>
+      <Frame color='border-emerald-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>休業補償給付・傷病手当金</h1>
         <p className='pb-6 text-left text-red-950 text-lg'>
           　けがや病気で働けなくなった時、月の収入の何割かを保障してくれる制度があります！<br />
@@ -151,7 +151,7 @@ const Syoubyou = () => {
               <p>退職後も、再就職や自営業を始めるまでは引き続きもらえます。</p>
           </>
           }
-          bg='lime-50'
+          bg='bg-lime-50'
         />
         <Accordion 
           title= '傷病手当金'
@@ -185,11 +185,11 @@ const Syoubyou = () => {
               ※ ただし退職後は、途中で働ける状態になった後は、また同じけがや病気で働けなくなっても残りの傷病手当金はもらえなくなります。</p>
           </>
           }
-          bg='emerald-50'
+          bg='bg-emerald-50'
         />
       </> } />
 
-      <Frame color='sky-200' contents={ <>
+      <Frame color='border-sky-200' contents={ <>
         <h1 className='py-8 text-indigo-900 text-3xl'>障害年金</h1>
         <p className='pb-6 text-left text-red-950 text-lg'></p>
         <h2 className='py-2 text-left text-indigo-900 text-xl'>もらえる条件</h2>
