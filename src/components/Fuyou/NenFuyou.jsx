@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Modal from 'src/components/Modal';
 
 const NenFuyou = (props) => {
   const setNenOpen = props.setNenOpen;
@@ -27,31 +28,24 @@ const NenFuyou = (props) => {
     },
   ]
   return (
-    <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50
-        flex items-center justify-center z-1'
-        onClick={() => setNenOpen(false)}>
-      <div className=' h-96 w-96 p-4 text-center text-red-950 bg-amber-50'
-          onClick={(e) => e.stopPropagation()}>
+    <Modal 
+      contents = { <>
         <h1 className='mt-10 mb-4 text-2xl'>{list[i].q}</h1>
         {!(i===0||i===1||i===10) && ( 
           <div>
-            <button className=' py-3 px-11 text-center shadow-md rounded-lg text-xl font-semibold 
+            <button className=' py-3 px-10 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
               onClick={() => setI(list[i].yes)}>はい</button>
-            <button className='ml-6 py-3 px-10 text-center shadow-md rounded-lg text-xl font-semibold 
+            <button className='ml-6 py-3 px-9 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
               onClick={() => setI(list[i].no)}>いいえ</button>
           </div>
         )}
-        <button className='my-8 py-3 px-10 text-center shadow-md rounded-full text-xl font-semibold 
-          bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
-          transition duration-200 ease-in'
-          onClick={() => setNenOpen(false)}>
-          とじる</button>
-      </div>
-    </div>
+        </> }
+      setModalOpen = { setNenOpen }
+    />
   );
 };
 
