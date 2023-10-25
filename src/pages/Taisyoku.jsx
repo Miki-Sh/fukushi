@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Frame from '/src/components/Frame';
-import Accordion from '/src/components/Accordion';
+import Frame from 'src/components/Frame';
+import Accordion from 'src/components/Accordion';
 
 const Taisyoku = () => {
   return (

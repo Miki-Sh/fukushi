@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Frame from "/src/components/Frame";
-import Accordion from '/src/components/Accordion';
-import SyougaiKisonen from '/src/components/SyougaiKisonen';
-import SyougaiKousei from '/src/components/SyougaiKousei';
+import Frame from "src/components/Frame";
+import Accordion from 'src/components/Accordion';
+import SyougaiKisonen from 'src/components/SyougaiKisonen';
+import SyougaiKousei from 'src/components/SyougaiKousei';
 
 const Syoubyou = () => {
   const [ kisoOpen, setKisoOpen ] = useState(false);
