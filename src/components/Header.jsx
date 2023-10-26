@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import ToggleButton from 'src/components/ToggleButton';
 import Navigation from 'src/components/Navigation';
 
