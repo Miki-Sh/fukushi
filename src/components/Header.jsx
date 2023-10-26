@@ -19,10 +19,10 @@ const Header = () => {
         <Link href='/Fuyou' className='px-6 hover:text-emerald-500 transition duration-300 ease-in'>
           <span className='pr-2 text-emerald-500'>◆</span>扶養って？
         </Link>
-        <Link href='/Fuyou' className='px-6 hover:text-teal-500 transition duration-300 ease-in'>
+        <Link href='/Taisyoku' className='px-6 hover:text-teal-500 transition duration-300 ease-in'>
           <span className='pr-2 text-teal-500'>◆</span>会社を辞める
         </Link>
-        <Link href='/Fuyou' className='px-6 hover:text-cyan-500 transition duration-300 ease-in'>
+        <Link href='/Syoubyou' className='px-6 hover:text-cyan-500 transition duration-300 ease-in'>
           <span className='pr-2 text-cyan-500'>◆</span>病気・けがをした
         </Link>
       </div>
