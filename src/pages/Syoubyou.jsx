@@ -220,13 +220,13 @@ const Syoubyou = () => {
                   className='my-3 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
                     bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
                     transition duration-200 ease-in'
-                  onClick={() => {setKisoOpen(true)}}
+                  onClick={() => setKisoOpen(true)}
                 >障害基礎年金もらえるか診断！</button>
               <button
                   className='my-3 sm:ml-2 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
                   bg-cyan-500 hover:bg-white text-white hover:text-cyan-500 border-4 hover:border-4 border-cyan-500
                   transition duration-200 ease-in'
-                  onClick={() => {setKouseiOpen(true)}}
+                  onClick={() => setKouseiOpen(true)}
                   >障害厚生年金もらえるか診断！</button>
             </div>
               { kisoOpen && <SyougaiKisonen setKisoOpen={setKisoOpen} /> }
