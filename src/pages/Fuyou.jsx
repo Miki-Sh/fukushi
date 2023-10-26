@@ -12,11 +12,13 @@ const Fuyou = () => {
 
   return (
     <div className='text-red-950 text-lg'>
+      <div className='max-w-3xl mx-auto px-8'>
         <h1 className='m-12 text-center text-indigo-900 text-3xl'>扶養（ふよう）って何？</h1>
-        <p className='m-8'>　扶養とは、子どもや両親、兄弟など、収入が少ない人を金銭的に支えることを言います。<br />
-          扶養している人がいる場合、扶養に入れる手続きをすることで、扶養している人の税金が安くなったり、
+        <p className='mb-8'>　扶養とは、子どもや両親、兄弟など、収入が少ない人を金銭的に支えることを言います。<br />
+          　扶養している人がいる場合、扶養に入れる手続きをすることで、扶養している人の税金が安くなったり、
           扶養されている人が健康保険料や年金を払わなくてすむなどのメリットがあります。</p>
-        <p className='mx-8'>　扶養には、「税金の扶養（所得税や住民税など）」と「健康保険の扶養」「年金の扶養」の3種類があります。</p>
+        <p>　扶養には、「税金の扶養（所得税や住民税など）」と「健康保険の扶養」「年金の扶養」の3種類があります。</p>
+      </div>
       <div className='my-12 flex flex-wrap justify-center items-center'>
         <Frame color='border-emerald-200' contents={ 
           <div className='grid justify-items-center'>

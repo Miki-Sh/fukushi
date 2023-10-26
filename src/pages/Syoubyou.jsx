@@ -9,8 +9,10 @@ const Syoubyou = () => {
   const [ kouseiOpen, setKouseiOpen ] = useState(false);
   return (
     <div className='text-red-950 text-lg'>
-      <h1 className='m-12 text-center text-indigo-900 text-3xl'>病気やけがで働けなくなったら</h1>
-      <p className='m-8 text-xl'>　病気やけがで働けなくなった時、使える制度は大きく分けて3つあります！</p>
+      <div className='max-w-5xl mx-auto px-8'>
+        <h1 className='m-12 text-center text-indigo-900 text-3xl'>病気やけがで働けなくなったら</h1>
+        <p className='m-8 text-center text-xl'>病気やけがで働けなくなった時、使える制度は大きく分けて3つあります！</p>
+      </div>
       <div className='grid sm:flex justify-items-center'>
         <div className='w-80 lg:w-11/12 m-4 p-4 text-center rounded-xl bg-lime-100'>
           <p className='text-left'>　どんなに医療費がかかっても、一定額以上は国が負担してくれる！</p>
@@ -27,7 +29,7 @@ const Syoubyou = () => {
       </div>
       <div className='my-12 flex flex-wrap items-center justify-center'>
         <Frame color='border-lime-200' contents={ <>
-          <h1 className='py-8 text-indigo-900 text-3xl'>高額療養費制度</h1>
+          <h1 className='py-8 text-center text-indigo-900 text-3xl'>高額療養費制度</h1>
           <p className='pb-6 text-left'>
             　高額療養費とは、同じ月にかかった医療費が高額になった場合、限度額を超えた分があとで払い戻される制度です。<br />
             　手術や出産などで、医療費が高額になることが事前にわかっている場合は「限度額適用認定証」の申請をしておくと、
@@ -137,7 +139,7 @@ const Syoubyou = () => {
         </> } />
 
         <Frame color='border-emerald-200' contents={ <>
-          <h1 className='py-8 text-indigo-900 text-3xl'>休業補償給付・傷病手当金</h1>
+          <h1 className='py-8 text-center text-indigo-900 text-3xl'>休業補償給付・傷病手当金</h1>
           <p className='pb-6 text-left'>
             　けがや病気で働けなくなった時、月の収入の何割かを保障してくれる制度があります！<br />
             　けがや病気の原因が、仕事（通勤も含む）の場合は、労災保険の<span className='text-pink-800'>休業補償給付</span>、
