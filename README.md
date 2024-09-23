@@ -1,40 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# なぜこのアプリを作ったのか
 
-## Getting Started
+&emsp;日本の社会保障制度は、知られていないだけでとても手厚いです。ただし、そのどれもが**申請制**で、自分で理解して自分で申請をしないと利用できません。今まで、福祉に関する仕事に携わってきた中で、「こんな制度があるなんて知らなかった。知っていたらあの時あそこまで苦労しなくて済んだのに...」「何となく知ってはいたけど、説明が難しすぎてよくわからなったから今まで利用できなかった」という人たちに何人も出会ってきました。  
+&emsp;知識は、生きていく上でとても大事な武器だと私は思っています。今、何かしらの助けを必要としている人たちが、「どこを探せばいいかわからない」「言い回しが難しすぎてわからない」という理由で、受けられたはずの支援を受けられずに埋もれてしまうのを防ぐ。今は必要なくとも、いつか必要になった時「そういえば、こういう時に使えるものがあったはず」と記憶のフックになる。このアプリがそういったことの手助けになって、ほんの少しでも世の中が良くなってほしいと願ってこのアプリを作成しています。
 
-First, run the development server:
+## 目次
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [機能](#機能)
+- [開発環境](#開発環境)
+- [本番環境](#本番環境)
+- [使用技術](#使用技術)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 機能
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- 扶養について
+  - 税金の扶養に入れられるか診断！
+  - 年金の扶養に入れられるか診断！
+  - 健康保険の扶養に入れられるか診断！
+- 退職時に使える制度
+- 病気やけがで働けなくなった時の制度
+  - 障害基礎年金もらえるか診断！
+  - 障害厚生年金もらえるか診断！
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 開発環境
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+シングルページアプリケーション (SPA) として作成しており、開発言語に**JavaScript**、ライブラリに**React**、フレームワークに**Next.js**、インフラには、**Vercel**を使用しています。 (括弧内の数字はバージョン)  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Create Next App](https://ja.next-community-docs.dev/docs/app-router/api-reference/create-next-app)
+  - [npm](https://www.npmjs.com/) (9.5.0)
+  - [Node.js](https://nodejs.org/) (19.7.0)
+  - [TypeScript](https://www.typescriptlang.org/) (5.2.2)
+  - [React](https://reactjs.org) (18.2.0)
 
-## Learn More
+動作確認のブラウザには、Chrome (Mac) を使用しています。
 
-To learn more about Next.js, take a look at the following resources:
+## 本番環境
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Vercel](https://vercel.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 使用技術
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/) (13.5.2) - サーバーサイドレンダリング（SSR）、静的サイト生成（SSG）フレームワーク
+- [TypeScript](https://www.typescriptlang.org/) (5.2.2) - 開発言語、静的型付け
+- [React](https://reactjs.org) (18.2.0) - SPA構築ライブラリ
+- [ReactDOM](https://ja.react.dev/reference/react-dom/components) (18.2.0)
+- [ESLint](https://eslint.org) (8.49.0) - JavaScript/TypeScriptコードの静的解析ツール
+- ESLint-config-next (13.5.2) - Next.js用のESLint設定
+- [PostCSS](https://postcss.org) (8.4.30) - CSSを解析して変換するツール
+- [Autoprefixer](https://github.com/postcss/autoprefixer) (10.4.16) - CSSにベンダープレフィックスを自動で追加するためのプラグイン
+- [TailwindCSS](https://tailwindcss.com) (3.3.3) - CSSフレームワーク
