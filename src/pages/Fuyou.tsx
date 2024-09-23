@@ -5,10 +5,10 @@ import KenpoFuyou from 'src/components/Fuyou/KenpoFuyou';
 import NenFuyou from 'src/components/Fuyou/NenFuyou';
 import Frame from 'src/components/Frame';
 
-const Fuyou = () => {
-  const [ ZeiOpen, setZeiOpen ] = useState(false);
-  const [ KenpoOpen, setKenpoOpen ] = useState(false);
-  const [ NenOpen, setNenOpen ] = useState(false);
+const Fuyou: React.FC = () => {
+  const [ ZeiOpen, setZeiOpen ] = useState<boolean>(false);
+  const [ KenpoOpen, setKenpoOpen ] = useState<boolean>(false);
+  const [ NenOpen, setNenOpen ] = useState<boolean>(false);
 
   return (
     <div className='text-red-950 text-lg'>

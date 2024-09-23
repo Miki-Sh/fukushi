@@ -1,7 +1,10 @@
 import Link from 'next/link';
 
-const Navigation = (props) => {
-  const setMenuOpen = props.setMenuOpen
+interface NavigationProps {
+  setMenuOpen: (menuOpen: boolean) => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ setMenuOpen }) => {
   return (
     <div className='absolute md:hidden right-0 z-10 w-full py-16 px-8 rounded-lg border border-gray-100 bg-lime-50 opacity-95 shadow-lg text-left text-xl'>
       <Link href='/Fuyou' onClick={() => setMenuOpen(false)} className='flex items-center w-full rounded-md py-2 px-3 hover:bg-gray-100 text-gray-700 hover:text-emerald-500 transition duration-300 ease-in'>

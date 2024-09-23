@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Frame from 'src/components/Frame';
 import Accordion from 'src/components/Accordion';
 
-const Taisyoku = () => {
+const Taisyoku: React.FC = () => {
   return (
     <div className='text-red-950 text-lg'>
       <div className='max-w-3xl my-12 mx-auto px-8 text-xl'>

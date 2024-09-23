@@ -1,4 +1,9 @@
-const Modal = (props) => {
+interface ModalProps {
+  setModalOpen: (modalOpen: boolean) => void;
+  contents: JSX.Element
+}
+
+const Modal: React.FC<ModalProps> = (props) => {
   const { setModalOpen, contents } = props;
 
   return (

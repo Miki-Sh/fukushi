@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const MainChoice = () => {
-  const ChoiceList = [
+interface ChoiceItem {
+  name: string;
+  introduction: string;
+  href: string;
+  img: string;
+}
+
+const MainChoice: React.FC = () => {
+  const choiceList: ChoiceItem[] = [
     {
       name: '養う家族がいる',
       introduction:'扶養って何？ 誰を扶養に入れられるの？ どうやって扶養に入れるの？',
@@ -25,7 +32,7 @@ const MainChoice = () => {
 
   return (
     <div className='my-12 flex flex-wrap justify-center items-center'>
-      {ChoiceList.map((items) => (
+      {choiceList.map((items) => (
       <Link href={items.href} key={items.name}>
         <div className='inline-block h-72 w-72 mr-8 mb-8 text-center rounded-3xl border-dashed border-8 border-emerald-200 bg-gradient-to-t from-emerald-100 to-transparent shadow-2xl cursor-pointer'>
           <h1 className='pt-12 px-2 text-3xl'>{items.name}</h1>
@@ -38,7 +45,6 @@ const MainChoice = () => {
       ))}
     </div>
   );
-  
 };
 
 export default MainChoice;

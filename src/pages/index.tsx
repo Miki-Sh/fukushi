@@ -1,6 +1,6 @@
 import MainChoice from 'src/components/MainChoice';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className='max-w-screen-lg mx-auto py-24 text-center text-red-950'>
       <div className = 'text-2xl'>

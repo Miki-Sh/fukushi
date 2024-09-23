@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import Modal from 'src/components/Modal';
 
-const NenFuyou = (props) => {
+interface NenFuyouProps {
+  setNenOpen: (nenOpen: boolean) => void;
+}
+
+interface Question {
+  q: string | JSX.Element;
+  yes?: number;
+  no?: number;
+}
+
+const NenFuyou: React.FC<NenFuyouProps> = (props) => {
   const setNenOpen = props.setNenOpen;
-  const [ i, setI] = useState(2);
-  const list = [
+  const [ i, setI] = useState<number>(2);
+  const list: Question[] = [
     {
       'q': '扶養に入れられます！働いている会社の担当者に相談してみましょう！',
     },
@@ -31,16 +41,16 @@ const NenFuyou = (props) => {
     <Modal 
       contents = { <>
         <h1 className='mt-10 mb-4 text-2xl'>{list[i].q}</h1>
-        {!(i===0||i===1||i===10) && ( 
+        { list[i].yes !== undefined && list[i].no !== undefined && ( 
           <div>
             <button className=' py-3 px-10 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].yes)}>はい</button>
+              onClick={() => setI(list[i].yes!)}>はい</button>
             <button className='ml-6 py-3 px-9 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].no)}>いいえ</button>
+              onClick={() => setI(list[i].no!)}>いいえ</button>
           </div>
         )}
         </> }

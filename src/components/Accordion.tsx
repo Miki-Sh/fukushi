@@ -1,4 +1,10 @@
-const Accordion = (props) => {
+interface AccordionProps {
+  bg: string,
+  title: string,
+  text: JSX.Element
+}
+
+const Accordion: React.FC<AccordionProps> = (props) => {
   const { bg, title, text } = props;
   return (
     <div className='mx-auto mb-6 max-w-lg text-left'>

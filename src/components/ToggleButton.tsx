@@ -1,4 +1,11 @@
-const ToggleButton = (props) => {
+import React from 'react';
+
+interface ToggleButtonProps {
+  menuOpen: boolean;
+  setMenuOpen: (menuOpen: boolean) => void;
+}
+
+const ToggleButton: React.FC<ToggleButtonProps> = (props) => {
   const { menuOpen, setMenuOpen } = props;
   const spanStyle1 = menuOpen ? 'left-4 translate-y-2 -rotate-45' : 'left-3';
   const spanStyle2 = menuOpen ? 'opacity-0' : '';

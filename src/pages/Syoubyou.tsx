@@ -4,9 +4,9 @@ import Accordion from 'src/components/Accordion';
 import SyougaiKisonen from 'src/components/SyougaiKisonen';
 import SyougaiKousei from 'src/components/SyougaiKousei';
 
-const Syoubyou = () => {
-  const [ kisoOpen, setKisoOpen ] = useState(false);
-  const [ kouseiOpen, setKouseiOpen ] = useState(false);
+const Syoubyou: React.FC = () => {
+  const [ kisonenOpen, setKisonenOpen ] = useState<boolean>(false);
+  const [ kouseiOpen, setKouseiOpen ] = useState<boolean>(false);
   return (
     <div className='text-red-950 text-lg'>
       <div className='max-w-5xl mx-auto px-8'>
@@ -220,7 +220,7 @@ const Syoubyou = () => {
                   className='my-3 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
                     bg-teal-500 hover:bg-white text-white hover:text-teal-500 border-4 hover:border-4 border-teal-500
                     transition duration-200 ease-in'
-                  onClick={() => setKisoOpen(true)}
+                  onClick={() => setKisonenOpen(true)}
                 >障害基礎年金もらえるか診断！</button>
               <button
                   className='my-3 sm:ml-2 py-3 px-6 text-center rounded-3xl text-xl font-semibold 
@@ -229,7 +229,7 @@ const Syoubyou = () => {
                   onClick={() => setKouseiOpen(true)}
                   >障害厚生年金もらえるか診断！</button>
             </div>
-              { kisoOpen && <SyougaiKisonen setKisoOpen={setKisoOpen} /> }
+              { kisonenOpen && <SyougaiKisonen setKisonenOpen={setKisonenOpen} /> }
               { kouseiOpen && <SyougaiKousei setKouseiOpen={setKouseiOpen} /> }  
             <h2 className='py-2 text-indigo-900 text-xl'>もらえる金額</h2>
             <table className='mx-auto text-center p-4 bg-white rounded-lg shadow text-base'>

@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'src/components/Modal';
 
-const SyougaiKisonen = (props) => {
-  const setKisoOpen = props.setKisoOpen;
-  const [ i, setI ] = useState(3);
-  const list = [
+interface Question {
+  q: string | JSX.Element;
+  yes?: number;
+  no?: number;
+}
+
+interface SyougaiKisonenProps {
+  setKisonenOpen: (open: boolean) => void;
+}
+
+const SyougaiKisonen: React.FC<SyougaiKisonenProps> = (props) => {
+  const { setKisonenOpen } = props;
+  const [i, setI] = useState<number>(3);
+  
+  const list: Question[] = [
     {
       'q': '障害基礎年金の受給要件に当てはまります！',
     },
@@ -64,20 +75,20 @@ const SyougaiKisonen = (props) => {
     <Modal 
       contents = { <>
         <h1 className='mt-10 mb-4 text-2xl'>{list[i].q}</h1>
-        {!(i===0||i===1||i===2) && ( 
+        { list[i].yes !== undefined && list[i].no !== undefined && ( 
           <div>
             <button className='py-3 px-10 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].yes)}>はい</button>
+              onClick={() => setI(list[i].yes!)}>はい</button>
             <button className='ml-6 py-3 px-9 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].no)}>いいえ</button>
+              onClick={() => setI(list[i].no!)}>いいえ</button>
           </div>
         )}
       </> }
-      setModalOpen = { setKisoOpen }
+      setModalOpen = { setKisonenOpen }
     />
   );
 };

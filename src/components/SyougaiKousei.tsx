@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'src/components/Modal';
 
-const SyougaiKousei = (props) => {
-  const setKouseiOpen = props.setKouseiOpen;
-  const [ i, setI ] = useState(4);
-  const list = [
+interface SyougaiKouseiProps {
+  setKouseiOpen: (open: boolean) => void;
+}
+
+interface Question {
+  q: string | JSX.Element;
+  yes?: number;
+  no?: number;
+}
+
+const SyougaiKousei: React.FC<SyougaiKouseiProps> = (props) => {
+  const { setKouseiOpen } = props;
+  const [i, setI] = useState<number>(4);
+  
+  const list: Question[] = [
     {
       'q': '障害厚生年金の受給要件に当てはまります！',
     },
@@ -62,16 +73,16 @@ const SyougaiKousei = (props) => {
     <Modal 
       contents = { <>
         <h1 className='mt-10 mb-4 text-2xl'>{list[i].q}</h1>
-        {!(i===0||i===1||i===2||i===3) && ( 
+        { list[i].yes !== undefined && list[i].no !== undefined && ( 
           <div>
             <button className='py-3 px-10 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].yes)}>はい</button>
+              onClick={() => setI(list[i].yes!)}>はい</button>
             <button className='ml-6 py-3 px-9 text-center shadow-md rounded-lg text-xl font-semibold 
               bg-pink-600 hover:bg-white text-white hover:text-pink-600 border-4 hover:border-4 border-pink-600
               transition duration-200 ease-in'
-              onClick={() => setI(list[i].no)}>いいえ</button>
+              onClick={() => setI(list[i].no!)}>いいえ</button>
           </div>
         )}
       </> }

@@ -4,8 +4,8 @@ import { useState } from 'react';
 import ToggleButton from 'src/components/ToggleButton';
 import Navigation from 'src/components/Navigation';
 
-const Header = () => {
-  const [ menuOpen, setMenuOpen ] = useState(false);
+const Header: React.FC = () => {
+  const [ menuOpen, setMenuOpen ] = useState<boolean>(false);
   return (
     <div className='flex justify-between sticky top-0 h-12 w-full pl-2 bg-amber-50 border-dashed border-b-8 border-orange-200 text-red-950 '>
       <Link href='/' className='flex items-center hover:text-orange-500'>
