@@ -19,6 +19,6 @@
     // },
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/Fuyou.jsx", "src/components/Shindan.jsx", "src/pages/Taisyoku.jsx", "src/components/Header.jsx", "src/components/ToggleButton.jsx", "src/components/Navigation.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/Fuyou.tsx", "src/components/Shindan.jsx", "src/pages/Taisyoku.tsx", "src/components/Header.tsx", "src/components/ToggleButton.tsx", "src/components/Navigation.tsx"],
   "exclude": ["node_modules"]
 }
