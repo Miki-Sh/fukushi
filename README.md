@@ -8,9 +8,6 @@ https://odekake-ls.vercel.app/
 
 ## 目次
 
-- [なぜこのアプリを作ったのか](#なぜこのアプリを作ったのか)
-- [アプリURL](#アプリurl)
-- [目次](#目次)
 - [機能](#機能)
 - [開発環境](#開発環境)
 - [本番環境](#本番環境)
@@ -32,10 +29,10 @@ https://odekake-ls.vercel.app/
 シングルページアプリケーション (SPA) として作成しており、開発言語に**TypeScript**、ライブラリに**React**、フレームワークに**Next.js**、インフラには、**Vercel**を使用しています。 (括弧内の数字はバージョン)  
 
 - [Create Next App](https://ja.next-community-docs.dev/docs/app-router/api-reference/create-next-app)
-  - [npm](https://www.npmjs.com/) (9.5.0)
-  - [Node.js](https://nodejs.org/) (19.7.0)
-  - [TypeScript](https://www.typescriptlang.org/) (5.2.2)
-  - [React](https://reactjs.org) (18.2.0)
+- [npm](https://www.npmjs.com/) (9.5.0)
+- [Node.js](https://nodejs.org/) (19.7.0)
+- [TypeScript](https://www.typescriptlang.org/) (5.2.2)
+- [React](https://reactjs.org) (18.2.0)
 
 動作確認のブラウザには、Chrome (Mac) を使用しています。
 
@@ -48,7 +45,7 @@ https://odekake-ls.vercel.app/
 - [Next.js](https://nextjs.org/) (13.5.2) - サーバーサイドレンダリング（SSR）、静的サイト生成（SSG）フレームワーク
 - [TypeScript](https://www.typescriptlang.org/) (5.2.2) - 開発言語、静的型付け
 - [React](https://reactjs.org) (18.2.0) - SPA構築ライブラリ
-- [ReactDOM](https://ja.react.dev/reference/react-dom/components) (18.2.0)
+- [ReactDOM](https://ja.react.dev/reference/react-dom/components) (18.2.0) - ReactアプリケーションをWebブラウザのDOMにレンダリングするためのライブラリ
 - [ESLint](https://eslint.org) (8.49.0) - JavaScript/TypeScriptコードの静的解析ツール
 - [ESLint-config-next](https://www.npmjs.com/package/eslint-config-next) (13.5.2) - Next.js用のESLint設定
 - [PostCSS](https://postcss.org) (8.4.30) - CSSを解析して変換するツール
